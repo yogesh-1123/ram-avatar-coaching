@@ -6,6 +6,15 @@
   <title>Sarah Thompson - Math Educator</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #00bcd4;
+      --accent-color: #2196f3;
+      --text-dark: #1e3a5f;
+      --text-light: #444;
+      --bg-light: #f5fafd;
+      --font-main: 'Quicksand', sans-serif;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,17 +22,16 @@
     }
 
     body {
-      font-family: 'Quicksand', sans-serif;
+      font-family: var(--font-main);
       background: linear-gradient(135deg, #e0f7fa, #f9fbe7);
       overflow-x: hidden;
       min-height: 100vh;
-      position: relative;
     }
 
-    /* === HERO SECTION === */
+    /* === HERO === */
     .hero {
       max-width: 900px;
-      margin: 0 auto;
+      margin: auto;
       padding: 100px 20px 60px;
       text-align: center;
       position: relative;
@@ -31,8 +39,8 @@
     }
 
     .hero-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
       border-radius: 20px;
       padding: 60px 30px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -40,31 +48,30 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: #007a9c;
+      color: var(--primary-color);
     }
 
     .hero h2 {
-      font-size: 1.5rem;
-      color: #5a5a5a;
+      font-size: 1.4rem;
+      color: #555;
       margin: 15px 0;
     }
 
     .hero p {
       font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 40px;
+      color: var(--text-light);
       max-width: 700px;
-      margin-inline: auto;
+      margin: 0 auto 30px;
     }
 
     .buttons {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 15px;
-      margin-bottom: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .buttons button {
@@ -78,9 +85,8 @@
     }
 
     .primary-btn {
-      background: linear-gradient(135deg, #00bcd4, #2196f3);
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
       color: white;
-      box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
     }
 
     .primary-btn:hover {
@@ -97,20 +103,16 @@
       background-color: #f0f0f0;
     }
 
-    .subjects {
-      font-size: 1rem;
-      color: #555;
-      margin-top: 10px;
-    }
-
     .subjects span {
       margin: 0 10px;
+      font-size: 1rem;
+      color: #555;
     }
 
-    /* === MATH SYMBOLS === */
+    /* === FLOATING SYMBOLS === */
     .math-symbol {
       position: absolute;
-      font-size: 2.5rem;
+      font-size: 3rem;
       opacity: 0.06;
       user-select: none;
       z-index: 1;
@@ -131,45 +133,35 @@
     /* === JOURNEY SECTION === */
     .journey-section {
       padding: 80px 20px;
-      background-color: #f5fafd;
-      position: relative;
-      z-index: 2;
+      background-color: var(--bg-light);
     }
 
     .journey-container {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: auto;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 40px;
-      justify-content: space-between;
     }
 
     .journey-text {
       flex: 1 1 500px;
-      text-align: left;
     }
 
     .journey-text h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #1e3a5f;
+      color: var(--text-dark);
     }
 
     .journey-text p {
       font-size: 1.05rem;
-      color: #444;
+      color: var(--text-light);
       line-height: 1.7;
       margin-bottom: 15px;
     }
 
-    .journey-photo {
-      flex: 1 1 300px;
-      display: flex;
-      justify-content: center;
-    }
-
     .photo-card {
       background: linear-gradient(135deg, #e0f7fa, #f0f4ff);
       border-radius: 20px;
@@ -180,66 +172,105 @@
     }
 
     .photo-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  border: 4px solid #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
     .photo-card p {
-      color: #555;
       font-size: 1rem;
+      color: #555;
     }
 
-    /*
-    .journey-photo {
-      flex: 1 1 300px;
-      display: flex;
-      justify-content: center;
+    /* === AREAS OF EXPERTISE === */
+    .container {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .photo-card {
-      background: linear-gradient(135deg, #e0f7fa, #f0f4ff);
-      border-radius: 20px;
-      padding: 40px 20px;
+    .section-title {
       text-align: center;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      width: 280px;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #111;
     }
 
-    .photo-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  border: 4px solid #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #5f6b7d;
+      margin-bottom: 50px;
+    }
 
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-    .photo-card p {
-      color: #555;
-      font-size: 1rem;
-    } */
+    .card {
+      background: linear-gradient(to bottom right, #ffffff, #f0f4ff);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-header img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .card-subtitle {
+      font-size: 0.9rem;
+      color: #388e3c;
+      margin-bottom: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background-color: #e1f5fe;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #0277bd;
+    }
 
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
       }
 
       .hero h2 {
         font-size: 1.2rem;
-      }
-
-      .hero p,
-      .journey-text p {
-        font-size: 1rem;
       }
 
       .journey-container {
@@ -250,18 +281,90 @@
       .journey-text {
         text-align: center;
       }
+
+      .photo-card {
+        margin-top: 20px;
+      }
     }
+
+    .contact-section {
+  background: #f6f9fc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.contact-section p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #4a90e2;
+  color: white;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #357ab8;
+}
+
   </style>
 </head>
-<body>
 
-  <!-- HERO SECTION -->
+<body>
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-card">
-      <h1>Sarah Thompson</h1>
+      <h1>Yogesh Sharma</h1>
       <h2>Mathematics Educator & Learning Specialist</h2>
       <p>
-        Passionate about making mathematics accessible and engaging for students of all levels. 
+        Passionate about making mathematics accessible and engaging for students of all levels.
         With 12+ years of experience, I transform complex concepts into clear, understandable lessons.
       </p>
       <div class="buttons">
@@ -281,29 +384,119 @@
   <div class="math-symbol symbol2">π</div>
   <div class="math-symbol symbol3">∫</div>
   <div class="math-symbol symbol4">√</div>
-
+  
   <!-- JOURNEY SECTION -->
   <section class="journey-section">
     <div class="journey-container">
-      <div class="journey-text">
-        <h2>My Journey in Mathematics Education</h2>
-        <p>
-          With over 12 years of experience in mathematics education, I've had the privilege of working with students from diverse backgrounds and skill levels. My approach combines traditional mathematical rigor with modern pedagogical techniques.
-        </p>
-        <p>
-          I specialize in making abstract mathematical concepts concrete through visual aids, real-world applications, and interactive problem-solving sessions. My goal is not just to teach formulas, but to foster critical thinking and mathematical intuition.
-        </p>
-        <p>
-          Beyond the classroom, I'm passionate about curriculum development and have contributed to several educational publications focused on innovative mathematics teaching strategies.
-        </p>
-      </div>
       <div class="journey-photo">
         <div class="photo-card">
           <img src="yogi.jpg" alt="Professional Photo" />
           <p>Professional Photo</p>
         </div>
       </div>
+      <div class="journey-text">
+        <h2>My Journey in Mathematics Education</h2>
+        <p>
+          With over 12 years of experience in mathematics education, I've had the privilege of working with students from diverse backgrounds and skill levels.
+        </p>
+        <p>
+          I specialize in making abstract concepts concrete through visual aids, real-world applications, and interactive sessions.
+        </p>
+        <p>
+          I also contribute to curriculum development and publish innovative teaching strategies for math education.
+        </p>
+      </div>
     </div>
   </section>
+
+  <!-- AREAS OF EXPERTISE -->
+  <div class="container">
+    <h2 class="section-title">Areas of Expertise</h2>
+    <p class="section-subtitle">Comprehensive mathematics education across multiple disciplines and grade levels</p>
+
+    <div class="cards-grid">
+  <!-- Algebra & Pre-Calculus Card -->
+  <div class="card">
+    <div class="card-header">
+      <img src="https://img.icons8.com/ios-filled/50/000000/calculator.png" alt="Algebra Icon" />
+      <div class="card-title">Algebra & Pre-Calculus</div>
+    </div>
+    <div class="card-subtitle">Grades 9–12</div>
+    <div class="tags">
+      <div class="tag">Linear Equations</div>
+      <div class="tag">Quadratic Functions</div>
+      <div class="tag">Polynomial Operations</div>
+    </div>
+  </div>
+
+  <!-- Calculus Card -->
+  <div class="card">
+    <div class="card-header">
+      <img src="https://img.icons8.com/ios-filled/50/000000/sigma.png" alt="Calculus Icon" />
+      <div class="card-title">Calculus</div>
+    </div>
+    <div class="card-subtitle">AP / College Level</div>
+    <div class="tags">
+      <div class="tag">Derivatives</div>
+      <div class="tag">Integrals</div>
+      <div class="tag">Limits & Continuity</div>
+    </div>
+  </div>
+
+  <!-- Statistics Card -->
+  <div class="card">
+    <div class="card-header">
+      <img src="https://img.icons8.com/ios-filled/50/000000/combo-chart.png" alt="Statistics Icon" />
+      <div class="card-title">Statistics</div>
+    </div>
+    <div class="card-subtitle">High School & College</div>
+    <div class="tags">
+      <div class="tag">Data Analysis</div>
+      <div class="tag">Probability</div>
+      <div class="tag">Distributions</div>
+    </div>
+  </div>
+
+  <!-- Mathematical Reasoning Card -->
+  <div class="card">
+    <div class="card-header">
+      <img src="https://img.icons8.com/ios-filled/50/000000/brain.png" alt="Reasoning Icon" />
+      <div class="card-title">Mathematical Reasoning</div>
+    </div>
+    <div class="card-subtitle">All Levels</div>
+    <div class="tags">
+      <div class="tag">Problem Solving</div>
+      <div class="tag">Logical Thinking</div>
+      <div class="tag">Puzzles</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <p>Have a question or want to work together? Drop me a message!</p>
+  <form action="https://formspree.io/f/xpwlolyv" method="POST" class="contact-form">
+    <div class="form-group">
+      <label for="name">Name *</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" name="_replyto" id="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message *</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
 </body>
 </html>
